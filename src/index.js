@@ -1,52 +1,13 @@
+import React from 'react';
 import ReactDOM from 'react-dom'
 import App from './App.js';
-import user from './data/user.json';
 
 
-function Profile(props) {
-  console.log(props);
-
-  const { avatar, tag, username, location, stats } = props;
-  return <div class="profile">
-  <div class="description">
-    <img
-      src= {avatar}
-      alt={tag}
-      class="avatar"
-    />
-    <p class="name">{username}</p>
-    <p class="tag">@{tag}</p>
-      <p class="location">{location}</p>
-  </div>
-
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-        <span class="quantity">{stats.followers}</span>
-    </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{stats.views}</span>
-    </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{stats.likes}</span>
-    </li>
-  </ul>
-</div>
-}
-
-
-/*ReactDOM.render(<Profile
-  avatar={user.avatar}
-  tag={user.tag}
-  name={user.username}
-  location={user.location}
-  stats={user.stats}
-/>, document.querySelector('#root'));*/
-
-
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(
+  <React.StrictMode>
+  <App />
+  </React.StrictMode>,
+  document.querySelector('#root'));
 
 
 
